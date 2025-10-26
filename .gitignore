@@ -1,0 +1,58 @@
+HELP.md
+target/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+/doc
+
+gha-creds-*.json
+
+changed.projects
+**/.DS_Store
+/collection/bruno/Sportycoins-API/.env
+
+/docs/architecture/.structurizr
+
+# Maven release plugin
+**/*.versionsBackup
+
+**/snyk/
+git-cli*/
+*.tar.gz
+
+.gradle
+.nx/installation
+.nx/cache
+.nx/workspace-data
+
+node_modules
+
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md

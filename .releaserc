@@ -1,0 +1,32 @@
+{
+    "branches": ['main'],
+    "plugins": [
+        '@semantic-release/commit-analyzer',
+        '@semantic-release/release-notes-generator',
+        [
+            '@semantic-release/exec',
+            {
+                prepareCmd:
+                    'nx run-many -t set-version --args="--version=${nextRelease.version}"',
+                publishCmd: 'nx run-many -t release',
+            },
+        ],
+        '@semantic-release/changelog',
+        [
+            '@semantic-release/git',
+            {
+                assets: [
+                    'CHANGELOG.md',
+                    'package.json',
+                    'README.md',
+                    '**/build.gradle.kts',
+                    '!node_modules/**',
+                    '!dist/**',
+                    '!.nx/**',
+                ],
+                message:
+                    'chore(release): bump to version ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+            },
+        ],
+    ],
+}

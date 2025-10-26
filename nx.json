@@ -1,0 +1,49 @@
+{
+  "installation": {
+    "version": "21.6.2",
+    "plugins": {
+      "@nx/gradle": "21.6.2"
+    }
+  },
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "plugins": [
+    {
+      "plugin": "@nx/gradle",
+      "options": {
+        "testTargetName": "test",
+        "classesTargetName": "classes",
+        "buildTargetName": "build"
+      }
+    }
+  ],
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/src/test/**/*"
+    ]
+  },
+  "targetDefaults": {
+    "install": {
+      "cache": true
+    },
+    "build": {
+      "dependsOn": ["^build", "prebuild"]
+    }
+  },
+  "release": {
+    "projects": ["*"],
+    "releaseTagPattern": "release/{projectName}/{version}",
+    "version": {
+      "conventionalCommits": true
+    },
+    "changelog": {
+      "projectChangelogs": {
+        "createRelease": "github"
+      }
+    },
+    "projectsRelationship": "independent"
+  }
+}
