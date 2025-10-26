@@ -6,7 +6,6 @@ import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang3.StringUtils;
 
 @Data
 @NoArgsConstructor
@@ -23,7 +22,7 @@ public class IamEnterpriseDirectoryUserDto {
     if (
       this.bn != null && this.givenName != null && !this.givenName.isEmpty()
     ) {
-      return StringUtils.join(this.getGivenName(), " ") + " " + this.getBn();
+      return this.getGivenName() + " " + this.getBn();
     } else return "UNKNOWN";
   }
 }
