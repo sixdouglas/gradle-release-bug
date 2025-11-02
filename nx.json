@@ -1,8 +1,9 @@
 {
   "installation": {
-    "version": "21.6.2",
+    "version": "22.0.2",
     "plugins": {
-      "@nx/gradle": "21.6.2"
+      "@nx/gradle": "22.0.2",
+      "@nx/js": "22.0.2"
     }
   },
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
@@ -12,7 +13,10 @@
       "options": {
         "testTargetName": "test",
         "classesTargetName": "classes",
-        "buildTargetName": "build"
+        "buildTargetName": "build",
+        "ciTestTargetName": "test-ci",
+        "ciIntTestTargetName": "intTest-ci",
+        "gradleExecutableDirectory": "./gradle-projects"
       }
     }
   ],
@@ -30,11 +34,16 @@
       "cache": true
     },
     "build": {
-      "dependsOn": ["^build", "prebuild"]
+      "dependsOn": [
+        "^build",
+        "prebuild"
+      ]
     }
   },
   "release": {
-    "projects": ["*"],
+    "projects": [
+      "*"
+    ],
     "releaseTagPattern": "release/{projectName}/{version}",
     "version": {
       "conventionalCommits": true

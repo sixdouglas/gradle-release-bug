@@ -4,7 +4,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
 
 plugins {
-    id("dev.nx.gradle.project-graph") version("0.1.7")
+    id("dev.nx.gradle.project-graph") version("0.1.8")
     id("org.springframework.boot") version "3.5.6" apply false
 }
 
