@@ -1,3 +1,13 @@
+## 1.0.6 (2025-11-18)
+
+### 🩹 Fixes
+
+- **fullname:** remove blank space
+
+### ❤️ Thank You
+
+- Douglas SIX
+
 ## 1.0.5 (2025-11-18)
 
 ### 🩹 Fixes
