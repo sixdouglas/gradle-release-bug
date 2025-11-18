@@ -1,3 +1,9 @@
+## 1.1.4 (2025-11-18)
+
+### 🧱 Updated Dependencies
+
+- Updated :common:iam-enterprise-directory-client to 1.0.4
+
 ## 1.1.3 (2025-11-18)
 
 ### 🧱 Updated Dependencies
